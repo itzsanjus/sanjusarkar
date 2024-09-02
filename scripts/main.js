@@ -89,6 +89,35 @@
   }))
 
   // Add your javascript here
+// Example birthdate: "YYYY-MM-DD"
+  const birthdate = "2001-09-12"; 
+
+  function calculateAge(birthdate) {
+    const birthDate = new Date(birthdate);
+    const today = new Date();
+
+    let years = today.getFullYear() - birthDate.getFullYear();
+    let months = today.getMonth() - birthDate.getMonth();
+    let days = today.getDate() - birthDate.getDate();
+
+    // Adjust the months and years if the current month/day is before the birth month/day
+    if (days < 0) {
+      months--;
+      // Get the number of days in the previous month
+      const lastMonth = new Date(today.getFullYear(), today.getMonth(), 0);
+      days += lastMonth.getDate();
+    }
+
+    if (months < 0) {
+      years--;
+      months += 12;
+    }
+
+    return { years, months, days };
+  }
+
+  const age = calculateAge(birthdate);
+  document.getElementById("age").textContent = `${age.years} years, ${age.months} months, ${age.days} days`;
 
 
 })();
