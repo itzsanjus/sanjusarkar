@@ -21,5 +21,5 @@ If you have any questions or suggestions, feel free to contact me:
 
 ---
 
-Thank you for visiting my portfolio! 🚀
+Thank you for visiting my portfolio!
 
